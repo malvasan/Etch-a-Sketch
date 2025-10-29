@@ -11,7 +11,11 @@ function createGrid(numberSquares = 16){
             square.classList.toggle("square");
             square.style.height = `${960 / numberSquares}px`;
             square.addEventListener('mouseover',(e)=>{
-                square.style.background = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
+                if(square.style.background == ''){
+                    square.style.background = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
+                    square.style.opacity = 0.1;
+                }
+                square.style.opacity = parseFloat(square.style.opacity) + 0.1;
             })
             div.appendChild(square);
         }

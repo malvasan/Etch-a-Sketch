@@ -11,7 +11,7 @@ function createGrid(numberSquares = 16){
             square.classList.toggle("square");
             square.style.height = `${960 / numberSquares}px`;
             square.addEventListener('mouseover',(e)=>{
-                square.style.background = 'red';
+                square.style.background = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
             })
             div.appendChild(square);
         }
